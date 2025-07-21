@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vicfirth | Professional Drummer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(230, 57, 70, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Contact Cards Styles */
+.contact-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(230, 57, 70, 0.3);
+}
+
+.card-header {
+    background: rgba(230, 57, 70, 0.8);
+    padding: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.card-icon {
+    font-size: 1.8rem;
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.contact-item i {
+    font-size: 1.2rem;
+    color: var(--primary);
+    min-width: 20px;
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-label {
+    font-size: 0.8rem;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 3px;
+}
+
+.contact-link {
+    color: #f1faee;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: var(--primary);
+}
+
+/* Social Card Styles */
+.social-card .card-header {
+    background: rgba(29, 53, 87, 0.8);
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.social-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 10px;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-item i {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.social-item span {
+    font-size: 0.9rem;
+}
+
+.social-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.youtube { background: rgba(255, 0, 0, 0.7); }
+.instagram { background: rgba(225, 48, 108, 0.7); }
+.facebook { background: rgba(24, 119, 242, 0.7); }
+.tiktok { background: rgba(0, 0, 0, 0.7); }
+.whatsapp { background: rgba(37, 211, 102, 0.7); }
+
+.youtube:hover { background: rgba(255, 0, 0, 0.9); }
+.instagram:hover { background: rgba(225, 48, 108, 0.9); }
+.facebook:hover { background: rgba(24, 119, 242, 0.9); }
+.tiktok:hover { background: rgba(0, 0, 0, 0.9); }
+.whatsapp:hover { background: rgba(37, 211, 102, 0.9); }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .contact-cards-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .social-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.gallery-overlay span {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+        .contact-link {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.social-links a.whatsapp:hover {
+    background-color: #25D366;
+    color: white;
+}
+        :root {
+            --primary: #e63946;
+            --secondary: #1d3557;
+            --light: #f1faee;
+            --dark: #1a1a1a;
+            --accent: #ffd166;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: rgba(29, 53, 87, 0.9);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            padding: 10px 0;
+            background-color: rgba(26, 26, 26, 0.95);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--light);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/PHOTO-2025-05-13-10-36-48.JPG') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--light);
+        }
+        
+        .hero h1 span {
+            color: var(--primary);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--light);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary);
+            color: var(--light);
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #f72535;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--light);
+        }
+        
+        /* About Section */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--light);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--light);
+        }
+        
+        .about-text p {
+            margin-bottom: 15px;
+            color: #ccc;
+        }
+        
+        /* Artists Section */
+        .artists {
+            background-color: var(--secondary);
+        }
+        
+        .artists-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .artist-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .artist-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .artist-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .artist-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            position: relative;
+        }
+        
+        .gallery-controls {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .filter-btn {
+            background: none;
+            border: none;
+            color: var(--light);
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .filter-btn:hover::after, .filter-btn.active::after {
+            width: 100%;
+        }
+        
+        .filter-btn.active {
+            color: var(--primary);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(230, 57, 70, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-overlay i {
+            color: white;
+            font-size: 2rem;
+        }
+        
+        /* Image Upload Section */
+        .upload-section {
+            background-color: var(--secondary);
+            padding: 60px 0;
+        }
+        
+        .upload-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .upload-container h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--light);
+        }
+        
+        .upload-area {
+            border: 2px dashed var(--primary);
+            padding: 40px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .upload-area:hover {
+            background-color: rgba(230, 57, 70, 0.1);
+        }
+        
+        .upload-area i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .upload-area p {
+            margin-bottom: 10px;
+        }
+        
+        #file-input {
+            display: none;
+        }
+        
+        .upload-btn {
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .upload-btn:hover {
+            background-color: #f72535;
+        }
+        
+        .preview-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .preview-item {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .preview-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .preview-item .remove-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 10px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--secondary);
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--light);
+        }
+        
+        .contact-info p {
+            margin-bottom: 30px;
+            color: #ccc;
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-item i {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            color: var(--light);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .contact-form {
+            flex: 1;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--light);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            color: var(--light);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #0d1520;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-content p {
+            color: #aaa;
+            margin-bottom: 15px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links li {
+            margin: 0 15px;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .copyright {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content, .contact-container {
+                flex-direction: column;
+            }
+            
+            .about-img, .about-text, .contact-info, .contact-form {
+                width: 100%;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--dark);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 40px;
+                transition: all 0.5s ease;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .artists-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Artists Section Styles */
+.artists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.artist-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.artist-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(230, 57, 70, 0.2);
+    border-color: rgba(230, 57, 70, 0.3);
+}
+
+.artist-image {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+}
+
+.artist-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.artist-info {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.artist-info h3 {
+    margin: 0 0 5px 0;
+    color: var(--light);
+    font-size: 1.1rem;
+}
+
+.artist-info p {
+    margin: 0 0 10px 0;
+    color: var(--primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.artist-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.artist-meta span {
+    font-size: 0.75rem;
+    color: #aaa;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.artist-meta i {
+    font-size: 0.7rem;
+    color: var(--primary);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .artists-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+    
+    .artist-card {
+        flex-direction: column;
+    }
+    
+    .artist-image {
+        width: 100%;
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .artists-grid {
+        grid-template-columns: 1fr;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">VIC<span>FIRTH</span></a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#artists">Artists</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>OSEI AGYEKUM GEORGE <span>"VICFIRTH"</span></h1>
+                <p>Professional Drummer | Session Artist | International Performer</p>
+                <div class="cta-buttons">
+                    <a href="#gallery" class="btn">Pictures</a>
+                    <a href="#contact" class="btn btn-outline">Book for Sessions</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>The Rhythm Behind the Music</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="images\IMG_0422.JPG" alt="Vicfirth Drumming">
+                </div>
+                <div class="about-text">
+                    <h3>Biography</h3>
+                    <p>Osei Agyekum George, popularly known with the stage name "Vicfirth", was born on 6th November 1991 in the Ashanti region of Ghana, where he started his music career at the early age of 16.</p>
+                    <p>He joined a gospel band called Sanctuary of Grace Incorporated (SOGI) where he was mentored into the next level which has given him 18 years of great musical experience in performing, recording, and collaborating with various artistes and bands as a professional drummer.</p>
+                    <p>Gospel, hip hop, RnB, soul, reggae, afrobeat, pop, high life, jazz, etc. are a list of genres of expertise.</p>
+                    <p>Versatility is his Hallmark.</p>
+                    <a href="#contact" class="btn">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artists Section -->
+<section class="section artists" id="artists">
+    <div class="container">
+        <div class="section-title">
+            <h2>Artists & Bands I've Worked With</h2>
+        </div>
+        <div class="artists-grid">
+            <!-- Existing Artists -->
+            <div class="artist-card">
+                <div class="artist-image">
+                    <img src="images\kojo antwi.jpg" alt="Kojo Antwi" loading="lazy">
+                </div>
+                <div class="artist-info">
+                    <h3>Kojo Antwi</h3>
+                    <p>Official Drummer</p>
+                    <div class="artist-meta">
+                        <span><i class="fas fa-calendar-alt"></i> 2018-Present</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artist-card">
+                <div class="artist-image">
+                    <img src="images/sonniebadu.jpg" alt="Dr. Sonnie Badu" loading="lazy">
+                </div>
+                <div class="artist-info">
+                    <h3>Dr. Sonnie Badu</h3>
+                    <p>Tour Drummer</p>
+                    <div class="artist-meta">
+                        <span><i class="fas fa-globe-africa"></i> International Tours</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artist-card">
+                <div class="artist-image">
+                    <img src="images/juanita.jpg" alt="Juanita Bynum" loading="lazy">
+                </div>
+                <div class="artist-info">
+                    <h3>Juanita Bynum</h3>
+                    <p>Recording Session</p>
+                    <div class="artist-meta">
+                        <span><i class="fas fa-compact-disc"></i> Album Session</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Artists -->
+            <div class="artist-card">
+                <div class="artist-image">
+                    <img src="images/phil-thompson.jpg" alt="Phil Thompson" loading="lazy">
+                </div>
+                <div class="artist-info">
+                    <h3>Phil Thompson</h3>
+                    <p>Live Performance</p>
+                    <div class="artist-meta">
+                        <span><i class="fas fa-music"></i> Gospel Concert</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artist-card">
+                <div class="artist-image">
+                    <img src="images\Michael_Stuckey.jpg" alt="Michael Stuckey" loading="lazy">
+                </div>
+                <div class="artist-info">
+                    <h3>Michael Stuckey</h3>
+                    <p>Recording Session</p>
+                    <div class="artist-meta">
+                        <span><i class="fas fa-microphone"></i> Studio Work</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artist-card">
+                <div class="artist-image">
+                    <img src="images\donnie.jfif" alt="Donnie McClurkin" loading="lazy">
+                </div>
+                <div class="artist-info">
+                    <h3>Donnie McClurkin</h3>
+                    <p>Live Performance</p>
+                    <div class="artist-meta">
+                        <span><i class="fas fa-globe"></i> International</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artist-card">
+                <div class="artist-image">
+                    <img src="images\ohema mercy.jpg" alt="Ohemaa Mercy" loading="lazy">
+                </div>
+                <div class="artist-info">
+                    <h3>Ohemaa Mercy</h3>
+                    <p>Tour Drummer</p>
+                    <div class="artist-meta">
+                        <span><i class="fas fa-bus"></i> Ghana Tour</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artist-card">
+                <div class="artist-image">
+                    <img src="images\MOG.jfif" alt="MOG" loading="lazy">
+                </div>
+                <div class="artist-info">
+                    <h3>MOG</h3>
+                    <p>Recording Session</p>
+                    <div class="artist-meta">
+                        <span><i class="fas fa-headphones"></i> Studio Session</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artist-card">
+                <div class="artist-image">
+                    <img src="images/unclejoe.jpg" alt="Joe Mettle" loading="lazy">
+                </div>
+                <div class="artist-info">
+                    <h3>Joe Mettle</h3>
+                    <p>Performance</p>
+                    <div class="artist-meta">
+                        <span><i class="fas fa-star"></i> Award Shows</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artist-card">
+                <div class="artist-image">
+                    <img src="images\cece twum.jpg" alt="Cece Twum" loading="lazy">
+                </div>
+                <div class="artist-info">
+                    <h3>Cece Twum</h3>
+                    <p>Live Performance</p>
+                    <div class="artist-meta">
+                       
+                    </div>
+                </div>
+            </div>
+
+            <div class="artist-card">
+                <div class="artist-image">
+                    <img src="images\keepers music.jpg" alt="The Keeper's Music" loading="lazy">
+                </div>
+                <div class="artist-info">
+                    <h3>The Keeper's Music</h3>
+                    <p>Recording Session</p>
+                    <div class="artist-meta">
+                      
+                    </div>
+                </div>
+            </div>
+
+            <div class="artist-card">
+                <div class="artist-image">
+                    <img src="images\efe grace.jpg" alt="Efe Grace" loading="lazy">
+                </div>
+                <div class="artist-info">
+                    <h3>Efe Grace</h3>
+                    <p>Live Performance</p>
+                    <div class="artist-meta">
+                        <span><i class="fas fa-microphone"></i> Concerts</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artist-card">
+                <div class="artist-image">
+                    <img src="images\kofi peprah.jpg" alt="Kofi Owusu Peprah" loading="lazy">
+                </div>
+                <div class="artist-info">
+                    <h3>Kofi Owusu Peprah</h3>
+                    <p>Recording Session</p>
+                    <div class="artist-meta">
+                        <span><i class="fas fa-music"></i> Studio Work</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artist-card">
+                <div class="artist-image">
+                    <img src="images/samini.jpg" alt="Samini" loading="lazy">
+                </div>
+                <div class="artist-info">
+                    <h3>Samini</h3>
+                    <p>Recording Session</p>
+                    <div class="artist-meta">
+                        <span><i class="fas fa-compact-disc"></i> Album Feature</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artist-card">
+                <div class="artist-image">
+                    <img src="images/efyaa.jpg" alt="Efya" loading="lazy">
+                </div>
+                <div class="artist-info">
+                    <h3>Efya</h3>
+                    <p>Live Performance</p>
+                    <div class="artist-meta">
+                        <span><i class="fas fa-music"></i> Concert Series</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artist-card">
+                <div class="artist-image">
+                    <img src="images\Edem-ayigbe.jpeg" alt="Edem" loading="lazy">
+                </div>
+                <div class="artist-info">
+                    <h3>Edem</h3>
+                    <p>Recording Session</p>
+                    <div class="artist-meta">
+                        <span><i class="fas fa-headphones"></i> Studio Session</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artist-card">
+                <div class="artist-image">
+                    <img src="images\becca.jfif" alt="Becca" loading="lazy">
+                </div>
+                <div class="artist-info">
+                    <h3>Becca</h3>
+                    <p>Live Performance</p>
+                    <div class="artist-meta">
+                        <span><i class="fas fa-star"></i> Award Shows</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artist-card">
+                <div class="artist-image">
+                    <img src="images/blackooo.jpg" alt="Black Sherif" loading="lazy">
+                </div>
+                <div class="artist-info">
+                    <h3>Black Sherif</h3>
+                    <p>Recording Session</p>
+                    <div class="artist-meta">
+                        <span><i class="fas fa-compact-disc"></i> Hit Single</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artist-card">
+                <div class="artist-image">
+                    <img src="images\akwaboah.jfif" alt="Akwaboah" loading="lazy">
+                </div>
+                <div class="artist-info">
+                    <h3>Akwaboah</h3>
+                    <p>Live Performance</p>
+                    <div class="artist-meta">
+                        <span><i class="fas fa-music"></i> Jazz Festival</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artist-card">
+                <div class="artist-image">
+                    <img src="images\olivetheboy.jpg" alt="Olive the Boy" loading="lazy">
+                </div>
+                <div class="artist-info">
+                    <h3>Olive the Boy</h3>
+                    <p>Recording Session</p>
+                    <div class="artist-meta">
+                        <span><i class="fas fa-headphones"></i> Studio Work</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artist-card">
+                <div class="artist-image">
+                    <img src="images/kidi.jpg" alt="Kidi" loading="lazy">
+                </div>
+                <div class="artist-info">
+                    <h3>Kidi</h3>
+                    <p>Live Performance</p>
+                    <div class="artist-meta">
+                        <span><i class="fas fa-ticket-alt"></i> Concert Tour</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artist-card">
+                <div class="artist-image">
+                    <img src="images\kwame eugene.jpg" alt="Kwame Eugene" loading="lazy">
+                </div>
+                <div class="artist-info">
+                    <h3>Kwame Eugene</h3>
+                    <p>Recording Session</p>
+                    <div class="artist-meta">
+                        <span><i class="fas fa-compact-disc"></i> Album Production</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Gallery Section -->
+    <section class="section gallery" id="gallery">
+    <div class="container">
+        <div class="section-title">
+            <h2>Gallery</h2>
+        </div>
+      
+        <div class="gallery-grid">
+            <div class="gallery-item" data-category="performances">
+                <img src="images/IMG_5255.JPG" alt="Vicfirth performing live">
+                <div class="gallery-overlay">
+                    
+                </div>
+            </div>
+            <div class="gallery-item" data-category="studio">
+                <img src="images/PHOTO-2025-05-13-10-36-47.JPG" alt="Vicfirth in studio session">
+                <div class="gallery-overlay">
+                    
+                </div>
+            </div>
+            <div class="gallery-item" data-category="tours">
+                <img src="images\IMG_2618.JPG" alt="Vicfirth on tour">
+                <div class="gallery-overlay">
+                    
+                </div>
+            </div>
+            <div class="gallery-item" data-category="performances">
+                <img src="images/PHOTO-2025-05-13-10-36-48.JPG" alt="Vicfirth at concert">
+                <div class="gallery-overlay">
+                    
+                </div>
+            </div>
+            <div class="gallery-item" data-category="studio">
+                <img src="images\church1.JPG" alt="Recording session">
+                <div class="gallery-overlay">
+                    
+                </div>
+            </div>
+            <div class="gallery-item" data-category="tours">
+                <img src="images/IMG_0422.JPG" alt="Backstage on tour">
+                <div class="gallery-overlay">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Contact Section -->
+   <!-- Contact Section -->
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="section-title">
+        <h2>Let's Create Magic</h2>
+    </div>
+    <div class="contact-cards-container">
+        <!-- Contact Info Card -->
+        <div class="contact-card">
+            <div class="card-header">
+                <i class="fas fa-envelope-open-text card-icon"></i>
+                <h3>Get In Touch</h3>
+            </div>
+            <div class="card-body">
+                <p>For booking inquiries, collaborations, or any other questions, feel free to reach out.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-content">
+                            <span class="contact-label">Email</span>
+                            <a href="mailto:georgeoseivicfirth7@gmail.com" class="contact-link">georgeoseivicfirth7@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="contact-content">
+                            <span class="contact-label">Phone</span>
+                            <a href="tel:+233502156854" class="contact-link">+233 50 215 6854</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-content">
+                            <span class="contact-label">Location</span>
+                            <a href="https://maps.google.com/?q=Ghana,West+Africa" target="_blank" class="contact-link"> Oyarifa , Accra Ghana.</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Media Card -->
+        <div class="contact-card social-card">
+            <div class="card-header">
+                <i class="fas fa-share-alt card-icon"></i>
+                <h3>Connect With Me</h3>
+            </div>
+            <div class="card-body">
+                <div class="social-grid">
+                    <a href="https://www.youtube.com/@drumgeorgevicfirth5838" target="_blank" class="social-item youtube">
+                        <i class="fab fa-youtube"></i>
+                        <span>YouTube</span>
+                    </a>
+                    <a href="https://www.instagram.com/drumvicfirth?igsh=M2htcmhvOW4wdDUy" target="_blank" class="social-item instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://www.facebook.com/share/1F5Xs7bf2k/?mibextid=wwXIfr" target="_blank" class="social-item facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="https://www.tiktok.com/@georgevicfirth419?_t=ZM-8yBySDfrJqC&_r=1" target="_blank" class="social-item tiktok">
+                        <i class="fab fa-tiktok"></i>
+                        <span>TikTok</span>
+                    </a>
+                    <a href="https://wa.me/233502156854" target="_blank" class="social-item whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="#" class="logo">VIC<span>FIRTH</span></a>
+                <p>Professional Drummer | Session Artist | International Performer</p>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#artists">Artists</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <p class="copyright">&copy; 2023 Vicfirth. All Rights Reserved.</p>
+                <p class="copyright">&copy; Developed by Jay Tech solutions .</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const navItems = document.querySelectorAll('.nav-links li');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // Sticky Header
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            header.classList.toggle('scrolled', window.scrollY > 0);
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Gallery Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filter = btn.dataset.filter;
+                
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.dataset.category === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Image Upload Functionality
+        const uploadArea = document.getElementById('upload-area');
+        const browseBtn = document.getElementById('browse-btn');
+        const fileInput = document.getElementById('file-input');
+        const previewContainer = document.getElementById('preview-container');
+
+        // Handle drag and drop
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.style.backgroundColor = 'rgba(230, 57, 70, 0.2)';
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.style.backgroundColor = 'transparent';
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.style.backgroundColor = 'transparent';
+            
+            const files = e.dataTransfer.files;
+            handleFiles(files);
+        });
+
+        // Handle file selection via button
+        browseBtn.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        fileInput.addEventListener('change', () => {
+            const files = fileInput.files;
+            handleFiles(files);
+        });
+
+        /* Function to handle uploaded files
+        function handleFiles(files) {
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                
+                if (!file.type.startsWith('image/')) continue;
+                
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    const previewItem = document.createElement('div');
+                    previewItem.className = 'preview-item';
+                    
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    
+                    const removeBtn = document.createElement('button');
+                    removeBtn.className = 'remove-btn';
+                    removeBtn.innerHTML = '&times;';
+                    removeBtn.addEventListener('click', () => {
+                        previewItem.remove();
+                    });
+                    
+                    previewItem.appendChild(img);
+                    previewItem.appendChild(removeBtn);
+                    previewContainer.appendChild(previewItem);
+                };
+                
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Contact Form Submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the form data to a server
+            // For this example, we'll just log it and show an alert
+            console.log({ name, email, subject, message });
+            
+            alert('Thank you for your message! I will get back to you soon.');
+            contactForm.reset();
+        });*/
+    </script>
+</body>
+</html>
