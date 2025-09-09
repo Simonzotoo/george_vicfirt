@@ -970,6 +970,24 @@
         grid-template-columns: 1fr;
     }
 }
+
+            .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px; /* optional: rounded corners */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* optional: shadow */
+    }
+
+    .video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* makes sure it fills nicely */
+    }
     </style>
 </head>
 <body>
@@ -1033,6 +1051,21 @@
             </div>        </div>
     </section>
 
+
+                <!-- Video Section -->
+        <section class="video-section">
+        <div class="container">
+            <div class="section-title">
+            <h2>Lets have some fun here </h2>
+            </div>
+            <div class="video-container">
+            <video controls>
+                <source src="images\George vid.MP4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            </div>
+        </div>
+        </section>
 <!-- Artists Section -->
 <section class="section artists" id="artists">
     <div class="container">
@@ -1342,10 +1375,10 @@
 
                  <div class="artist-card">
                 <div class="artist-image">
-                    <img src="images\Emery Newman.jfif" alt="Samini" loading="lazy">
+                    <img src="images\Amy Newman.jpg" alt="Emy Newman" loading="lazy">
                 </div>
                 <div class="artist-info">
-                    <h3><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Emry Newman</a></h3>
+                    <h3><a href="   " target="_blank">Emy Newman</a></h3>
                     <p>Recording Session</p>
                     <div class="artist-meta">
                         <span><i class="fas fa-compact-disc"></i> Album Feature</span>
@@ -1355,10 +1388,10 @@
 
                  <div class="artist-card">
                 <div class="artist-image">
-                    <img src="images\abaawa connie.jpg" alt="Samini" loading="lazy">
+                    <img src="images\Jakelyn Carr.JPG" alt="Samini" loading="lazy">
                 </div>
                 <div class="artist-info">
-                    <h3><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Abaawa Conne</a></h3>
+                    <h3><a href="   " target="_blank">Jakelyn Carr</a></h3>
                     <p>Recording Session</p>
                     <div class="artist-meta">
                         <span><i class="fas fa-compact-disc"></i> Album Feature</span>
@@ -1368,10 +1401,10 @@
 
                  <div class="artist-card">
                 <div class="artist-image">
-                    <img src="images\shaviel.jpg" alt="Shaviel Franklin" loading="lazy">
+                    <img src="images\CHEVEELLLLLLLLL.jpg" alt="Chevelle Franklyn" loading="lazy">
                 </div>
                 <div class="artist-info">
-                    <h3><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Shavell Franklin</a></h3>
+                    <h3><a href="  " target="_blank">Chevelle Franklyn</a></h3>
                     <p>Recording Session</p>
                     <div class="artist-meta">
                         <span><i class="fas fa-compact-disc"></i> Album Feature</span>
@@ -1657,7 +1690,7 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <p class="copyright">&copy; 2023 Vicfirth. All Rights Reserved.</p>
-                <p class="copyright">&copy; Developed by Jay Tech solutions .</p>
+                <p class="copyright"> Developed by Jay Tech solutions .</p>
             </div>
         </div>
     </footer>
